@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "useDefineForClassFields": true,
+    "lib": ["dom", "dom.Iterable", "esnext"],
+    "baseUrl": "src",
+    "outDir": "./.tsBuildInfoFile",
+    "target": "ES2021",
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsxImportSource": "react",
+    "removeComments": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", ".jest/setup.ts"],
+  "exclude": [
+    "./node_modules",
+    "dist",
+    ".storybook",
+    "src/**/stories.tsx",
+    "src/**/*.test*"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
