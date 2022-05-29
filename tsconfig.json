@@ -26,6 +26,7 @@
     "declaration": true,
     "skipLibCheck": true
   },
+  "types": ["vite/client"],
   "include": ["src/**/*.ts", "src/**/*.tsx", ".jest/setup.ts"],
   "exclude": [
     "./node_modules",
