@@ -1,11 +1,11 @@
 module.exports = {
-  staticDirs: ['../public'],
   stories: ['../src/@(components|templates)/**/storybook/stories.@(js|ts)x'],
   addons: [
     '@storybook/addon-essentials',
     'storybook-dark-mode/register',
     'storybook-mobile',
     '@storybook/addon-a11y',
+    "storybook-addon-turbo-build",
     'storybook-addon-swc'
   ],
   features: {
@@ -19,7 +19,6 @@ module.exports = {
     builder: {
       name: 'webpack5',
       options: {
-        lazyCompilation: true,
         fsCache: true
       }
     },
