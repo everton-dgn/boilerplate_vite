@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
       port: Number(process.env.VITE_PORT)
     },
     build: {
-      sourcemap: false
+      sourcemap: true
     },
     plugins: [tsconfigPaths(), react(), svgr()]
   }

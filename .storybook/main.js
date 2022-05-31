@@ -1,12 +1,10 @@
 module.exports = {
-  stories: ['../src/@(components|templates)/**/storybook/stories.@(js|ts)x'],
+  stories: ['../src/@(components|templates)/**/storybook/stories.@(tsx)'],
   addons: [
     '@storybook/addon-essentials',
     'storybook-dark-mode/register',
     'storybook-mobile',
-    '@storybook/addon-a11y',
-    "storybook-addon-turbo-build",
-    'storybook-addon-swc'
+    '@storybook/addon-a11y'
   ],
   features: {
     storyStoreV7: true
@@ -16,18 +14,10 @@ module.exports = {
     checkOptions: {}
   },
   core: {
-    builder: {
-      name: 'webpack5',
-      options: {
-        fsCache: true
-      }
-    },
+    builder: '@storybook/builder-vite',
     disableTelemetry: true
   },
-  webpackFinal: async config => {
-    config.resolve.modules.push(`${process.cwd()}/src`)
-    return config
-  },
+  viteFinal: async config => config,
   previewHead: head => `
     ${head}
     <style>
