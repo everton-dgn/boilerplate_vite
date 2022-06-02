@@ -9,7 +9,8 @@ export default defineConfig(({ mode }) => {
   return {
     base: '/',
     server: {
-      port: Number(process.env.VITE_PORT)
+      port: Number(process.env.VITE_PORT),
+      open: true
     },
     build: {
       sourcemap: true
