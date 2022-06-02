@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "useDefineForClassFields": true,
     "lib": ["dom", "dom.Iterable", "esnext"],
-    "baseUrl": "src",
     "outDir": "./.tsBuildInfoFile",
     "target": "ES2021",
     "esModuleInterop": true,
