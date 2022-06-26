@@ -96,7 +96,7 @@ describe('[Page] PageExample3', () => {
     const repositoryListText1 = screen.queryByText('example1')
     const repositoryListText2 = screen.queryByText('example2')
 
-    fireEvent.click(btn)
+    userEvent.click(btn)
 
     expect(verifyCall).toHaveBeenCalledTimes(0)
     expect(repositoryListText1).not.toBeInTheDocument()
