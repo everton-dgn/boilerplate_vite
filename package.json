@@ -20,17 +20,16 @@
     "build-storybook": "build-storybook",
     "generate": "yarn plop --plopfile componentGenerator/plopfile.js",
     "check-update": "yarn upgrade-interactive --latest",
-    "prepare": "husky install",
+    "prepare": "husky install && chmod ug+x .husky/*",
     "release": "semantic-release"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn typecheck && yarn test --findRelatedTests -b && yarn build && yarn build-storybook"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "src/**/*.{ts,tsx}": [
       "yarn lint",
       "yarn lint:css"
     ]
