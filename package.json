@@ -20,7 +20,7 @@
     "build-storybook": "build-storybook",
     "generate": "yarn plop --plopfile componentGenerator/plopfile.js",
     "check-update": "yarn upgrade-interactive --latest",
-    "prepare": "husky install && chmod ug+x .husky/*",
+    "prepare": "husky install",
     "release": "semantic-release"
   },
   "husky": {
@@ -99,7 +99,6 @@
     "prettier": "^2.7.1",
     "react-test-renderer": "^18.2.0",
     "semantic-release": "^19.0.3",
-    "serve": "^13.0.2",
     "source-map-loader": "^4.0.0",
     "storybook-dark-mode": "^1.1.0",
     "storybook-mobile": "^1.0.0",
