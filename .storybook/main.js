@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../src/ui/@(components|templates)/**/storybook/stories.@(tsx)'],
+  stories: ['../src/ui/@(components|templates)/**/storybook/stories.@(js|ts)x'],
   addons: [
     '@storybook/addon-essentials',
     'storybook-dark-mode/register',
