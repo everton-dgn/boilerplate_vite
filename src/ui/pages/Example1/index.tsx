@@ -11,17 +11,12 @@ const Example1 = () => {
     <S.Container role="main">
       <C.TitleSection title="Page Example 1" />
 
-      <br />
-
-      <C.TitleAnimation />
-
       <S.Column>
         <C.Button
           fullWidth={true}
           color="blue"
           size="large"
           text="Return"
-          className="btn"
           aria-label="Return"
           onClick={() => navigate('/')}
         />

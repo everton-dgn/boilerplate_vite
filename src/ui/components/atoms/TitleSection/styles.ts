@@ -13,7 +13,7 @@ export const TitleSection = styled.h1`
   font-size: ${T.fonts.sizes.xLarge};
   font-weight: ${T.fonts.normal};
 
-  ${T.breakpoints.custom(800)} {
+  @media (min-width: 800px) {
     font-size: ${T.fonts.sizes.xxLarge};
   }
 `

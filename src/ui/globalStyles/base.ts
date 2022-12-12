@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 import T from 'ui/theme'
-import { ColorsTheme } from './colors'
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -86,6 +85,4 @@ export const GlobalStyles = createGlobalStyle`
     scrollbar-color: ${T.colors.primary} ${T.colors.white} !important;
     scrollbar-width: 1.6rem !important;
   }
-
-  ${ColorsTheme}
 `

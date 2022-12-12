@@ -8,7 +8,7 @@ export const Container = styled.main`
   padding: 0;
   align-items: center;
 
-  ${T.breakpoints.custom(800)} {
+  @media (min-width: 800px) {
     margin: 120px auto;
     padding: 0 20px;
   }

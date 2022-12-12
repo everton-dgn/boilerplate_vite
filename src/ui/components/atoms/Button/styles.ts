@@ -39,13 +39,6 @@ const ColorsBtn = {
     &:hover {
       background-color: ${T.colors.primaryHover};
     }
-  `,
-  red: css`
-    background-color: ${T.colors.red};
-
-    &:hover {
-      background-color: ${T.colors.redHover};
-    }
   `
 }
 
@@ -63,9 +56,9 @@ export const Container = styled.button<BtnProps>`
     transition: background-color 0.15s ease-in-out;
     width: 100%;
     ${!!color && ColorsBtn[color]};
-    ${!!size && SizesBtn[size]}
+    ${!!size && SizesBtn[size]};
 
-    ${T.breakpoints.custom(480)} {
+    @media (min-width: 800px) {
       width: ${fullWidth ? '100%' : 'fit-content'};
     }
 
