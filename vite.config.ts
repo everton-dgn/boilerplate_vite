@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => {
       open: true
     },
     build: {
-      sourcemap: true
+      sourcemap: mode === 'development'
     },
     test: {
       globals: true,
