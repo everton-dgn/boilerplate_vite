@@ -1,34 +1,26 @@
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 import { useSetPageTitle } from 'hooks'
-import * as S from './styles'
 import * as C from 'ui/components'
-import { ReactComponent as IconArrowUp } from 'ui/assets/icons/arrow_up.svg'
+import * as S from './styles'
+import { ReactComponent as LogoReact } from 'ui/assets/images/logoReact.svg'
+import { ReactComponent as LogoVite } from 'ui/assets/images/logoVite.svg'
 
 const Home = () => {
+  const [count, setCount] = useState(0)
   useSetPageTitle({ pageTitle: 'Boilerplate React' })
-  const navigate = useNavigate()
 
   return (
-    <S.Container role="main">
-      <C.TitleSection title="Web Accessibility" />
-
-      <br />
-
-      <IconArrowUp width={50} height={50} title="Arrow pointing up" />
-
-      <br />
-
-      <S.BtnGroup>
-        <C.Button
-          fullWidth={true}
-          color="blue"
-          size="large"
-          text="Page Example 1"
-          aria-label="Page Example 1"
-          className="btn"
-          onClick={() => navigate('page-example-1')}
-        />
-      </S.BtnGroup>
+    <S.Container>
+      <S.WrapperImages>
+        <LogoVite role="img" title="Logo Vite" />
+        <LogoReact role="img" title="Logo React" />
+      </S.WrapperImages>
+      <S.Title>Vite + React</S.Title>
+      <C.Button
+        text={`COUNT: ${count}`}
+        aria-label={`COUNT: ${count}`}
+        onClick={() => setCount(prevState => prevState + 1)}
+      />
     </S.Container>
   )
 }

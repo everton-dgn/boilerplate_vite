@@ -1,2 +1,1 @@
-export * from './useSetPageTitle'
-export * from './useStorage'
+export { default as useSetPageTitle } from './useSetPageTitle'

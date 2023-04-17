@@ -1,13 +1,17 @@
-export const colors = {
-  primary: '#334bc8',
-  secondary: '#fff',
-  primaryHover: '#5872ff',
-  gray: '#7a7a7a',
-  grayHover: '#aaaaaa',
+const colors = {
+  primary: '#046a81',
+  secondary: '#041627',
+  tertiary: '#0493b4',
+  tertiaryHover: '#05b5c5',
+  dark: '#010509',
   white: '#fff',
+  gray: '#7a7a7a',
   black: '#000',
   blue: '#011fbb',
-  blueDark: '#001c33',
   blueLight: '#e9f4fe',
-  disabled: '#a1a4b0'
+  disabled: '#a1a4b0',
+  overlay: '#000000b3',
+  focus: '#007dfa99'
 }
+
+export default colors
