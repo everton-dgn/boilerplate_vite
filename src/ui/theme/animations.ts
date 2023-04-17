@@ -1,6 +1,6 @@
 import { keyframes } from 'styled-components'
 
-export const animations = {
+const animations = {
   rotate: keyframes`
     0% {
       transform: rotate(0deg);
@@ -31,3 +31,5 @@ export const animations = {
     }
   `
 }
+
+export default animations

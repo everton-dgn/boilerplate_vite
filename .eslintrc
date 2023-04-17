@@ -1,9 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    "node": true,
-    "jest": true
+    "es2022": true,
+    "node": true
   },
   "settings": {
     "react": {
@@ -15,7 +14,7 @@
     },
     "import/resolver": {
       "typescript": {
-        "project": "tsconfig.json"
+        "project": "./tsconfig.json"
       }
     }
   },
@@ -23,6 +22,7 @@
     "standard",
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:promise/recommended",
     "plugin:jsx-a11y/recommended",
@@ -31,10 +31,7 @@
     "prettier",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
-    "plugin:jest-dom/recommended",
-    "plugin:testing-library/react",
-    "plugin:jest/recommended",
-    "plugin:jest/style"
+    "plugin:testing-library/react"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -50,12 +47,12 @@
     "@typescript-eslint",
     "promise",
     "prettier",
-    "jest-dom",
     "testing-library",
-    "jest",
     "jsx-a11y"
   ],
   "rules": {
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
     "no-console": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/function-component-definition": [
@@ -90,14 +87,9 @@
       "extends": ["plugin:storybook/recommended"]
     },
     {
-      "files": ["**/__tests__/**/*.tsx?", "**/?(*.)+(spec|test).tsx?"],
-      "plugins": ["jest-dom", "testing-library", "jest"],
-      "extends": [
-        "plugin:jest-dom/recommended",
-        "plugin:testing-library/react",
-        "plugin:jest/recommended",
-        "plugin:jest/style"
-      ]
+      "files": ["**/__tests__/**/*.tsx", "**/?(*.)+(spec|test).tsx"],
+      "plugins": ["testing-library"],
+      "extends": ["plugin:testing-library/react"]
     }
   ]
 }

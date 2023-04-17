@@ -1,8 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import T from 'ui/theme'
-import { ColorsTheme } from './colors'
 
-export const GlobalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
@@ -25,11 +24,9 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
   }
 
-  body,
-  html,
   #root {
-    background-color: ${T.colors.secondary};
-    color: ${T.colors.black};
+    background-image: linear-gradient(45deg, ${T.colors.dark}, ${T.colors.secondary}, ${T.colors.primary});
+    color: ${T.colors.white};
   }
 
   p, h1, h2, h3, h4, h5, h6 {
@@ -42,13 +39,14 @@ export const GlobalStyles = createGlobalStyle`
   select,
   textarea,
   button {
-    font: ${T.fonts.normal} ${T.fonts.sizes.medium} Inter, sans-serif;
+    font: ${T.fonts.weights.medium} ${T.fonts.sizes.xs} Inter, sans-serif;
+    font-family: ${T.fonts.family};
   }
 
   button {
     cursor: pointer;
     border: none;
-    border-radius: ${T.border.radius};
+    border-radius: ${T.borderRadius.sm};
   }
 
   #root {
@@ -65,27 +63,22 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-
   ::-webkit-scrollbar,
   scrollbar-width {
-    width: 1.6rem !important;
-    background-color: #FFFFFF28;
+    width: 16px !important;
+    background-color: ${T.colors.white};
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ${T.colors.primary};
+    background-color: ${T.colors.gray};
     border-radius: 20px;
-    border: 0.3rem solid #fff;
+    border: 3px solid ${T.colors.white};
   }
 
   :root {
-    scrollbar-color: ${T.colors.primary} ${T.colors.white} !important;
-    scrollbar-width: 1.6rem !important;
+    scrollbar-color: ${T.colors.gray} ${T.colors.white} !important;
+    scrollbar-width: 16px !important;
   }
-
-  ${ColorsTheme}
 `
+
+export default GlobalStyles

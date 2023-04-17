@@ -1,5 +1,1 @@
-export * from './useAnimationRender'
-export * from './useSetPageTitle'
-export * from './useStorage'
-export * from './useThemeDetect'
-export * from './useRenderingByWindowSize'
+export { default as useSetPageTitle } from './useSetPageTitle'

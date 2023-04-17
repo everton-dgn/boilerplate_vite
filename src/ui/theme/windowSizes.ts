@@ -1,5 +1,7 @@
-export const windowSizes = {
+const windowSizes = {
   sm: 0,
   md: 600,
   lg: 1024
 }
+
+export default windowSizes

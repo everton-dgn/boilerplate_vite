@@ -1,84 +1,51 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from 'testHelpers/providers'
-import { mockedUseNavigate } from 'testHelpers/mocks'
 import Home from '..'
 
 describe('[Page] Home', () => {
   const user = userEvent.setup({ delay: null })
 
-  beforeEach(() => {
-    mockedUseNavigate.mockClear()
-  })
-
-  it('should alternate the text displayed in two h1 each time the button is clicked', async () => {
+  it('should render a page with a title, two images and a button', () => {
     renderWithProviders(<Home />)
 
-    const btn = screen.getByRole('button', { name: 'Change Global State' })
-    const titleSectionStateExample1 = screen.getByRole('heading', {
-      name: 'Redux Example State: false'
+    const logoRsPack = screen.getByRole('img', {
+      name: /logo vite/i
     })
-    const titleSectionPayload1 = screen.getByRole('heading', {
-      name: 'Payload: Empty'
+    const logoReact = screen.getByRole('img', {
+      name: /logo react/i
     })
-
-    expect(titleSectionStateExample1).toBeInTheDocument()
-    expect(titleSectionPayload1).toBeInTheDocument()
-
-    await user.click(btn)
-    const titleSectionStateExample2 = screen.getByRole('heading', {
-      name: 'Redux Example State: true'
+    const title = screen.getByRole('heading', {
+      name: 'Vite + React'
     })
-    const titleSectionPayload2 = screen.getByRole('heading', {
-      name: 'Payload: Example Text'
+    const button = screen.getByRole('button', {
+      name: 'COUNT: 0'
     })
 
-    expect(titleSectionStateExample2).toBeInTheDocument()
-    expect(titleSectionPayload2).toBeInTheDocument()
-
-    await user.click(btn)
-    const titleSectionStateExample3 = screen.getByRole('heading', {
-      name: 'Redux Example State: false'
-    })
-    const titleSectionPayload3 = screen.getByRole('heading', {
-      name: 'Payload: Empty'
-    })
-
-    expect(titleSectionStateExample3).toBeInTheDocument()
-    expect(titleSectionPayload3).toBeInTheDocument()
+    expect(logoRsPack).toBeInTheDocument()
+    expect(logoReact).toBeInTheDocument()
+    expect(button).toBeInTheDocument()
+    expect(title).toBeInTheDocument()
   })
 
-  const dataTests = [
-    { buttonNumber: 1 },
-    { buttonNumber: 2 },
-    { buttonNumber: 3 }
-  ]
-  dataTests.forEach(({ buttonNumber }) => {
-    it(`should go to another page by clicking the button ${buttonNumber} and it should preload the next page with the onMouseEnter event`, async () => {
-      renderWithProviders(<Home />)
-
-      const btn = screen.getByRole('button', {
-        name: `Page Example ${buttonNumber}`
-      })
-      await user.click(btn)
-      await user.hover(btn)
-
-      expect(mockedUseNavigate).toHaveBeenCalledTimes(1)
-      expect(mockedUseNavigate).toHaveBeenCalledWith(
-        `page-example-${buttonNumber}`
-      )
-    })
-  })
-
-  it('should toggle button text and data-theme value that tag body when clicking change theme button', async () => {
+  it('should render count in button when clicked', async () => {
     renderWithProviders(<Home />)
 
-    const btnTheme = screen.getByRole('button', { name: /theme/i })
+    const countButton0 = screen.getByRole('button', {
+      name: 'COUNT: 0'
+    })
+    await user.click(countButton0)
+    const countButton1 = screen.getByRole('button', {
+      name: 'COUNT: 1'
+    })
 
-    expect(btnTheme).toHaveTextContent('Theme light')
-    expect(document.body.dataset.theme).toBe('light')
-    await user.click(btnTheme)
-    expect(btnTheme).toHaveTextContent('Theme dark')
-    expect(document.body.dataset.theme).toBe('dark')
+    expect(countButton1).toBeInTheDocument()
+
+    await user.click(countButton1)
+    const countButton2 = screen.getByRole('button', {
+      name: 'COUNT: 2'
+    })
+
+    expect(countButton2).toBeInTheDocument()
   })
 })
