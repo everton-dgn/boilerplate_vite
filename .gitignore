@@ -40,3 +40,4 @@ yarn-error.log*
 
 # typescript incremental features
 /.tsBuildInfo
+.eslintcache

@@ -11,17 +11,17 @@ import windowSizes from './windowSizes'
 import states from './states'
 
 const T = {
+  animations,
+  borderRadius,
+  boxShadows,
+  breakpoints,
   colors,
   fonts,
-  spacings,
-  animations,
-  breakpoints,
-  boxShadows,
-  windowSizes,
   grids,
-  borderRadius,
-  zIndex,
-  states
+  spacings,
+  states,
+  windowSizes,
+  zIndex
 } as const
 
 export default T

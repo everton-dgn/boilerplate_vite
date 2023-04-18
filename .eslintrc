@@ -28,6 +28,7 @@
     "plugin:jsx-a11y/recommended",
     "plugin:import/errors",
     "plugin:import/typescript",
+    "plugin:typescript-sort-keys/recommended",
     "prettier",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
@@ -45,12 +46,34 @@
     "react",
     "react-hooks",
     "@typescript-eslint",
+    "sort-keys-fix",
+    "typescript-sort-keys",
     "promise",
     "prettier",
     "testing-library",
     "jsx-a11y"
   ],
   "rules": {
+    "react/jsx-sort-props": "warn",
+    "object-shorthand": "warn",
+    "sort-keys-fix/sort-keys-fix": "warn",
+    "typescript-sort-keys/string-enum": [
+      "warn",
+      "asc",
+      {
+        "caseSensitive": true,
+        "natural": false
+      }
+    ],
+    "typescript-sort-keys/interface": [
+      "warn",
+      "asc",
+      {
+        "caseSensitive": true,
+        "natural": false,
+        "requiredFirst": true
+      }
+    ],
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "no-console": "error",
@@ -72,7 +95,7 @@
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint-in-jsx-scope": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-non-null-assertion": "warn",
     "space-before-function-paren": "off",
     "eslint-disable-next-line": "off",
     "react/display-name": "off",

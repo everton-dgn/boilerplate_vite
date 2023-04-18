@@ -2,14 +2,14 @@ import { Meta, StoryObj } from '@storybook/react'
 import Button from '..'
 
 const meta: Meta<typeof Button> = {
-  title: 'Atoms/Button',
-  component: Button,
+  argTypes: {
+    onClick: { action: 'onClick' }
+  },
   args: {
     text: 'Click Here'
   },
-  argTypes: {
-    onClick: { action: 'onClick' }
-  }
+  component: Button,
+  title: 'Atoms/Button'
 }
 
 export default meta
