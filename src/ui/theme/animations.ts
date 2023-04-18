@@ -1,12 +1,9 @@
 import { keyframes } from 'styled-components'
 
 const animations = {
-  rotate: keyframes`
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
+  fadeIn: keyframes`
+    to {
+      opacity: 1;
     }
   `,
   fadeInMove: (x: string, y: string, z: string) => keyframes`
@@ -19,15 +16,18 @@ const animations = {
         transform: translate3d(0, 0, 0);
       }
     `,
-  fadeIn: keyframes`
-    to {
-      opacity: 1;
-    }
-  `,
   glass: keyframes`
     to {
       background-color: #000000b3;
       backdrop-filter: blur(0.7rem);
+    }
+  `,
+  rotate: keyframes`
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   `
 }

@@ -3,10 +3,10 @@ import windowSizes from './windowSizes'
 const device = (value: number) => `@media screen and (min-width: ${value}px)`
 
 const breakpoints = {
-  mobile: device(windowSizes.sm),
-  tablet: device(windowSizes.md),
+  custom: (width: number) => device(width),
   desktop: device(windowSizes.lg),
-  custom: (width: number) => device(width)
+  mobile: device(windowSizes.sm),
+  tablet: device(windowSizes.md)
 }
 
 export default breakpoints

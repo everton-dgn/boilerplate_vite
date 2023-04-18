@@ -1,11 +1,11 @@
 const zIndex = {
+  alwaysOnTop: 5000,
   base: 100,
   elevation: 200,
-  sidebar: 300,
   header: 400,
-  overlay: 500,
   modal: 600,
-  alwaysOnTop: 5000
+  overlay: 500,
+  sidebar: 300
 }
 
 export default zIndex

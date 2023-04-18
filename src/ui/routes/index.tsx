@@ -4,17 +4,17 @@ import * as C from 'ui/components'
 
 const router = createBrowserRouter([
   {
-    element: <C.DefaultTemplate />,
     children: [
       {
-        path: '/',
-        element: <Pages.Home />
+        element: <Pages.Home />,
+        path: '/'
       }
-    ]
+    ],
+    element: <C.DefaultTemplate />
   },
   {
-    path: '*',
-    element: <Pages.Error />
+    element: <Pages.Error />,
+    path: '*'
   }
 ])
 export default router

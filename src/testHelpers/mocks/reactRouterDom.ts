@@ -7,11 +7,11 @@ export const mockedUseLocation = vi.fn()
 
 vi.mock('react-router-dom', () => ({
   ...vi.importActual('react-router-dom'),
-  useParams: mockedUseParams,
-  useRoutes: mockedUseRoutes,
-  useNavigate: () => mockedUseNavigate,
-  useLocation: () => mockedUseLocation,
-  Navigate: ({ children }: { children: ReactNode }) => children,
   Link: ({ children }: { children: ReactNode }) => children,
-  Outlet: ({ children }: { children: ReactNode }) => children
+  Navigate: ({ children }: { children: ReactNode }) => children,
+  Outlet: ({ children }: { children: ReactNode }) => children,
+  useLocation: () => mockedUseLocation,
+  useNavigate: () => mockedUseNavigate,
+  useParams: mockedUseParams,
+  useRoutes: mockedUseRoutes
 }))
