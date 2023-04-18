@@ -1,19 +1,19 @@
 const size = (size: number) => {
   window.matchMedia = vi.fn().mockImplementation(query => ({
+    addEventListener: vi.fn(),
+    addListener: vi.fn(),
+    dispatchEvent: vi.fn(),
     matches: query === `(min-width: ${size}px)`,
     media: '',
     onchange: null,
-    addListener: vi.fn(),
-    removeListener: vi.fn(),
-    dispatchEvent: vi.fn(),
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn()
+    removeEventListener: vi.fn(),
+    removeListener: vi.fn()
   }))
 }
 
 const object = {
-  writable: true,
-  value: vi.fn().mockImplementation(() => ({}))
+  value: vi.fn().mockImplementation(() => ({})),
+  writable: true
 }
 
 Object.defineProperty(window, 'matchMedia', object)
