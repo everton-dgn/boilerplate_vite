@@ -11,7 +11,7 @@ export const parameters = {
 }
 
 export const decorators = [
-  Story => (
+    (Story: any) => (
     <MainProvider>
       <Story/>
     </MainProvider>
