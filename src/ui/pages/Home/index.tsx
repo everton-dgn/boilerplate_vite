@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useSetPageTitle } from 'hooks'
-import * as C from 'ui/components'
+import useSetPageTitle from 'hooks/useSetPageTitle'
+import Button from 'ui/components/atoms/Button'
 import * as S from './styles'
 import { ReactComponent as LogoReact } from 'ui/assets/images/logoReact.svg'
 import { ReactComponent as LogoVite } from 'ui/assets/images/logoVite.svg'
@@ -16,7 +16,7 @@ const Home = () => {
         <LogoReact role="img" title="Logo React" />
       </S.WrapperImages>
       <S.Title>Vite + React</S.Title>
-      <C.Button
+      <Button
         aria-label={`COUNT: ${count}`}
         onClick={() => setCount(prevState => prevState + 1)}
         text={`COUNT: ${count}`}
