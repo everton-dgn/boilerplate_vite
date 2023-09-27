@@ -1,13 +1,12 @@
 import type {StorybookConfig} from '@storybook/react-vite'
 
 const config: StorybookConfig = {
-  stories: ['../src/ui/@(components|templates)/**/storybook/stories.@(js|ts)x'],
+  stories: ['../src/ui/@(components|templates)/**/storybook/stories.tsx'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
-    'storybook-mobile',
-    'storybook-dark-mode'
+    '@storybook/addon-styling'
   ],
   core: {
     disableTelemetry: true

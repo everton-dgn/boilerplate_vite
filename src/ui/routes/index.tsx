@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import DefaultTemplate from 'ui/components/templates/DefaultTemplate'
 import Home from 'ui/pages/Home'
 
-const Error = lazy(() => import('ui/pages/Error'))
+const Error = lazy(async () => await import('ui/pages/Error'))
 
 const router = createBrowserRouter([
   {

@@ -18,7 +18,9 @@ const Home = () => {
       <S.Title>Vite + React</S.Title>
       <Button
         aria-label={`COUNT: ${count}`}
-        onClick={() => setCount(prevState => prevState + 1)}
+        onClick={() => {
+          setCount(prevState => prevState + 1)
+        }}
         text={`COUNT: ${count}`}
       />
     </S.Container>

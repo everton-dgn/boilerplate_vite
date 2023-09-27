@@ -18,8 +18,19 @@
       }
     }
   },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "sort-keys-fix",
+    "typescript-sort-keys",
+    "promise",
+    "prettier",
+    "testing-library",
+    "jsx-a11y"
+  ],
   "extends": [
-    "standard",
+    "standard-with-typescript",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -42,18 +53,17 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "react-hooks",
-    "@typescript-eslint",
-    "sort-keys-fix",
-    "typescript-sort-keys",
-    "promise",
-    "prettier",
-    "testing-library",
-    "jsx-a11y"
-  ],
   "rules": {
+    "@typescript-eslint/prefer-nullish-coalescing": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/no-floating-promises": [
+      "error",
+      {
+        "ignoreVoid": false
+      }
+    ],
     "react/jsx-sort-props": "warn",
     "object-shorthand": "warn",
     "sort-keys-fix/sort-keys-fix": "warn",
