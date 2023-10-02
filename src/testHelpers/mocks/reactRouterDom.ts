@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 export const mockedUseNavigate = vi.fn()
 export const mockedUseParams = vi.fn()

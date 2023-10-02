@@ -24,8 +24,8 @@
     "declaration": true,
     "skipLibCheck": true,
     "incremental": true,
-    "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom"]
+    "types": ["vite/client", "vitest/globals"]
   },
-  "include": ["src"],
+  "include": ["src", "./vitest.setup.ts"],
   "exclude": ["dist", "node_modules"]
 }
