@@ -2,8 +2,8 @@ import { useState } from 'react'
 import useSetPageTitle from 'hooks/useSetPageTitle'
 import Button from 'components/atoms/Button'
 import S from './styles.module.scss'
-import LogoReact from 'assets/images/logoReact.svg?react'
-import LogoVite from 'assets/images/logoVite.svg?react'
+import LogoReact from 'images/logoReact.svg?react'
+import LogoVite from 'images/logoVite.svg?react'
 
 const Home = () => {
   const [count, setCount] = useState(0)
