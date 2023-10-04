@@ -11,3 +11,6 @@ storybook-static
 .tsBuildInfoFile
 vite.config.ts
 vitest.setup.ts
+.stylelintcache
+stylelint.config.js
+.stylelintignore

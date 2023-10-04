@@ -1,4 +1,4 @@
-import type T from 'ui/theme'
+import type T from 'theme'
 
 type Theme = typeof T
 

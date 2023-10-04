@@ -28,6 +28,8 @@
     "promise",
     "prettier",
     "testing-library",
+    "jest-dom",
+    "jest",
     "jsx-a11y"
   ],
   "extends": [
@@ -45,7 +47,9 @@
     "prettier",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
-    "plugin:testing-library/react"
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest/style"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -122,9 +126,14 @@
       "extends": ["plugin:storybook/recommended"]
     },
     {
-      "files": ["**/__tests__/**/*.tsx", "**/?(*.)+(spec|test).tsx"],
-      "plugins": ["testing-library"],
-      "extends": ["plugin:testing-library/react"]
+      "files": ["**/__tests__/?(*.)+(spec|test).tsx?"],
+      "plugins": ["jest-dom", "testing-library", "jest"],
+      "extends": [
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react",
+        "plugin:jest/recommended",
+        "plugin:jest/style"
+      ]
     }
   ]
 }

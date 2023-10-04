@@ -9,3 +9,5 @@ componentGenerator
 coverage
 storybook-static
 .tsBuildInfoFile
+.stylelintcache
+.stylelintignore

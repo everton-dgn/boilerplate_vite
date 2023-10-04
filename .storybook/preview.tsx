@@ -1,7 +1,8 @@
 import type { Preview } from '@storybook/react'
 import viewports from './viewports'
-import MainProvider from '../src/ui/providers/mainProvider'
-import './style.css'
+import '../src/theme/reset.scss'
+import MainProvider from '../src/providers/main'
+import './style.scss'
 
 const preview: Preview = {
   decorators: [
@@ -13,7 +14,7 @@ const preview: Preview = {
   ],
   parameters: {
     backgrounds: {
-      default: 'dark'
+      default: 'light'
     },
     viewport: {
       viewports

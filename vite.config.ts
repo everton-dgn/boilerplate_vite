@@ -18,10 +18,7 @@ export default defineConfig(({ mode }) => {
     test: {
       coverage: {
         exclude: [
-          'src/testHelpers/',
-          'src/ui/theme',
-          'src/ui/globalStyles',
-          'src/**/__tests__'
+          'src/testHelpers/'
         ]
       },
       environment: 'happy-dom',
