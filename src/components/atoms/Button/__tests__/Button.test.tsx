@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import renderWithProviders from 'testHelpers/providers/components'
-import event from 'testHelpers/providers/helpFunctions'
+import event from 'testHelpers/utilityFunctions'
 import Button from '..'
 
 describe('[Component] Button', () => {
@@ -9,7 +9,7 @@ describe('[Component] Button', () => {
     renderWithProviders(<Button label="Mais Informações" onClick={onClick} />)
 
     const btn = screen.getByRole('button', { name: /Mais Informações/i })
-    await event.click(btn)
+    await event().click(btn)
 
     expect(onClick).toHaveBeenCalledTimes(1)
   })
