@@ -5,8 +5,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-a11y',
-    '@storybook/addon-styling'
+    '@storybook/addon-a11y'
   ],
   core: {
     disableTelemetry: true
@@ -19,6 +18,7 @@ const config: StorybookConfig = {
     autodocs: true
   },
   typescript: {
+    check: true,
     reactDocgen: 'react-docgen'
   }
 }

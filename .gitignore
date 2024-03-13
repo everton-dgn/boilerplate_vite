@@ -36,6 +36,4 @@ yarn-error.log*
 /src/stories
 
 # linters
-.eslintcache
-.stylelintcache
 .husky
