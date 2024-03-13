@@ -29,7 +29,7 @@ export default defineConfig(({ mode }) => {
       globals: true,
       passWithNoTests: true,
       setupFiles: ['./vitest.setup.ts'],
-      // testTransformMode: { web: ["/\.tsx?$/"] },
+      testTransformMode: { web: ["/\.tsx?$/"] },
       include: ['src/**/*.test.{ts,tsx}']
     }
   }
