@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => {
       coverage: {
         provider: 'v8'
       },
-      environment: 'jest-dom',
+      environment: 'jsdom',
       globals: true,
       passWithNoTests: true,
       setupFiles: ['./vitest.setup.ts'],
