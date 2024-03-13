@@ -1,7 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tsconfigPaths from 'vite-tsconfig-paths'
-import svgr from 'vite-plugin-svgr'
 
 export default defineConfig(({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
@@ -10,21 +9,28 @@ export default defineConfig(({ mode }) => {
     build: {
       sourcemap: mode === 'development'
     },
-    plugins: [tsconfigPaths(), react(), svgr()],
+    plugins: [tsconfigPaths(), react()],
     server: {
       open: true,
       port: Number(process.env.VITE_PORT)
     },
     test: {
-      coverage: {
-        exclude: [
-          'src/testHelpers/'
-        ]
+      deps: {
+        optimizer: {
+          web: {
+            enabled: true
+          }
+        }
       },
-      environment: 'happy-dom',
+      coverage: {
+        provider: 'v8'
+      },
+      environment: 'jest-dom',
       globals: true,
       passWithNoTests: true,
-      setupFiles: ['./vitest.setup.ts']
+      setupFiles: ['./vitest.setup.ts'],
+      // testTransformMode: { web: ["/\.tsx?$/"] },
+      include: ['src/**/*.test.{ts,tsx}']
     }
   }
 })

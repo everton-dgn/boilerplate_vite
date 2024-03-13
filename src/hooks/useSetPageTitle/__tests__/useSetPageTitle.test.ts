@@ -1,5 +1,6 @@
-import renderHooksProvider from 'testHelpers/providers/hooks'
-import useSetPageTitle from '..'
+import { renderHooksProvider } from 'tests/providers'
+
+import { useSetPageTitle } from '..'
 
 describe('[Hooks] useSetPageTitle', () => {
   it('should set page title equal to pageTitle prop', () => {

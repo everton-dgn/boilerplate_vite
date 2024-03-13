@@ -1,3 +1,3 @@
-import '@testing-library/jest-dom/vitest'
+import '@testing-library/jest-dom'
 import 'jsdom-global'
-import './src/testHelpers/mocks'
+import './src/tests/mocks'

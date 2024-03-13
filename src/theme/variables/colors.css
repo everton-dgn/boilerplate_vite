@@ -1,0 +1,53 @@
+:root {
+  --color-primary: hsl(191 94% 26% / 1);
+  --color-secondary: hsl(209 81% 8% / 1);
+  --color-tertiary: hsl(191 100% 27% / 1);
+  --color-tertiary-hover: hsl(185 95% 40% / 1);
+  --color-black: hsl(0 0% 0% / 1);
+  --color-blue: hsl(230 99% 37% / 1);
+  --color-blue-light: hsl(209 91% 95% / 1);
+  --color-disabled: hsl(228 9% 66% / 1);
+  --color-gray: hsl(0 0% 48% / 1);
+
+  --color-grey-light-900: hsl(231 25% 50% / 1);
+  --color-grey-light-800: hsl(231 25% 55% / 1);
+  --color-grey-light-700: hsl(231 25% 60% / 1);
+  --color-grey-light-600: hsl(231 25% 65% / 1);
+  --color-grey-light-500: hsl(231 25% 70% / 1);
+  --color-grey-light-400: hsl(231 25% 75% / 1);
+  --color-grey-light-300: hsl(231 25% 80% / 1);
+  --color-grey-light-200: hsl(231 25% 85% / 1);
+  --color-grey-light-100: hsl(231 25% 90% / 1);
+
+  --color-grey-900: hsl(217 16% 24% / 1);
+  --color-grey-800: hsl(217 16% 29% / 1);
+  --color-grey-700: hsl(217 16% 34% / 1);
+  --color-grey-600: hsl(217 16% 39% / 1);
+  --color-grey-500: hsl(217 16% 44% / 1);
+  --color-grey-400: hsl(217 16% 49% / 1);
+  --color-grey-300: hsl(217 16% 54% / 1);
+  --color-grey-200: hsl(217 16% 59% / 1);
+  --color-grey-100: hsl(217 16% 64% / 1);
+
+  --color-dark: hsl(248 38% 8% / 1);
+  --color-grey-dark: hsl(217 19% 27% / 1);
+  --color-grey-ultra-light: hsl(240 45% 94% / 1);
+
+  --color-neutral-light-lavender: hsl(240 32% 91% / 1);
+  --color-soft-white-blue: hsl(240 100% 98% / 1);
+  --color-light-blue-hint: hsl(240 100% 99% / 1);
+  --color-white: hsl(0 0% 100% / 1);
+
+  --color-green: hsl(158 65% 48% / 1);
+  --color-cherry: hsl(348 76% 52% / 1);
+
+  --color-error: hsl(0 81% 55% / 1);
+  --color-success: hsl(161 86% 35% / 1);
+  --color-warning: hsl(29 100% 50% / 1);
+  --color-info: hsl(209 100% 50% / 1);
+
+  --color-dark-translucency: hsl(231 25% 70% / 0.28);
+  --color-primary-dark-translucent: hsl(0 38% 40% / 0.29);
+  --color-focus: hsl(210 100% 49% / 0.6);
+  --color-transparent: transparent;
+}

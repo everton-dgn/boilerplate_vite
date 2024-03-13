@@ -1,0 +1,111 @@
+@layer base {
+  :root {
+    --font-poppins: 'Poppins', system-ui, -apple-system, 'BlinkMacSystemFont',
+      'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans',
+      'Helvetica Neue', sans-serif;
+  }
+
+  * {
+    outline: none;
+    line-height: calc(1em + 0.5rem);
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    @apply m-0 box-border list-none p-0 font-sans no-underline antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body *,
+    body *::before,
+    body *::after {
+      transition-delay: -1ms !important;
+      transition-duration: 1ms !important;
+      animation-duration: 1ms !important;
+      animation-delay: -1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  html {
+    @apply text-[62.5%];
+  }
+
+  body {
+    @apply isolate min-h-screen bg-[linear-gradient(45deg,_#000,_#041627,_#046a81)] pb-[50px] text-white jc-start col-full;
+
+    @screen sm {
+      @apply pb-0;
+    }
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply break-words;
+  }
+
+  b,
+  strong {
+    @apply font-700;
+  }
+
+  optgroup,
+  body,
+  input,
+  select,
+  textarea,
+  button {
+    @apply m-0 font-sans text-16 font-500;
+  }
+
+  button {
+    @apply cursor-pointer border-0;
+  }
+
+  a,
+  a:active {
+    @apply no-underline;
+  }
+
+  :focus,
+  :focus-visible {
+    @apply outline outline-4 outline-offset-1 outline-focus;
+  }
+
+  :focus:not(:focus-visible) {
+    @apply outline-0;
+  }
+
+  mark {
+    &::before,
+    &::after {
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(100%);
+      content: ' [start of highlighted text] ';
+      @apply absolute h-1 w-1 overflow-hidden whitespace-nowrap;
+    }
+
+    &::after {
+      content: ' [end of highlighted text] ';
+    }
+  }
+
+  ::-webkit-scrollbar,
+  scrollbar-width {
+    @apply w-12 bg-soft-white-blue;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-20 border border-solid border-soft-white-blue bg-grey-light-500;
+  }
+
+  :root {
+    scrollbar-color: rgba(160, 166, 198, 1) rgba(245, 245, 255, 1) !important;
+    scrollbar-width: 12px !important;
+  }
+}

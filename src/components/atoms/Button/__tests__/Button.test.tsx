@@ -1,7 +1,8 @@
 import { screen } from '@testing-library/react'
-import renderWithProviders from 'testHelpers/providers/components'
-import event from 'testHelpers/utilityFunctions'
-import Button from '..'
+import { renderWithProviders } from 'tests/providers'
+import { event } from 'tests/helpFunctions'
+
+import { Button } from '..'
 
 describe('[Component] Button', () => {
   it('should call a function once on click on the button', async () => {

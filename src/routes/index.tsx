@@ -1,11 +1,13 @@
 import { lazy } from 'react'
-import { createBrowserRouter } from 'react-router-dom'
-import DefaultTemplate from 'components/templates/DefaultTemplate'
+
 import Home from 'pages/Home'
+import { createBrowserRouter } from 'react-router-dom'
+
+import { DefaultTemplate } from 'components/templates'
 
 const Error = lazy(async () => await import('pages/Error'))
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     children: [
       {
@@ -20,4 +22,3 @@ const router = createBrowserRouter([
     path: '*'
   }
 ])
-export default router

@@ -1,28 +1,26 @@
-import { useState } from 'react'
-import useSetPageTitle from 'hooks/useSetPageTitle'
-import Button from 'components/atoms/Button'
-import S from './styles.module.scss'
-import LogoReact from 'images/logoReact.svg?react'
-import LogoVite from 'images/logoVite.svg?react'
+import { CounterButton } from 'components/atoms'
+
+import { useSetPageTitle } from 'hooks'
 
 const Home = () => {
-  const [count, setCount] = useState(0)
   useSetPageTitle({ pageTitle: 'Boilerplate React' })
 
   return (
-    <main className={S.container}>
-      <div className={S.wrapper_images}>
-        <LogoVite role="img" title="Logo Vite" />
-        <LogoReact role="img" title="Logo React" />
+    <main className="h-fit p-0 center col g-32">
+      <div className="flex-wrap px-8 py-0 jc-center row-full g-32">
+        <img
+          className="h-[77px] w-[87px] min-w-[87px] sm:h-[155px] sm:w-[174px] sm:min-w-[174px]"
+          src="/images/logoVite.svg"
+          alt="Logo Vite"
+        />
+        <img
+          className="h-[77px] w-[87px] min-w-[87px] sm:h-[155px] sm:w-[174px] sm:min-w-[174px]"
+          src="/images/logoReact.svg"
+          alt="Logo React"
+        />
       </div>
-      <h1 className={S.title}>Vite + React</h1>
-      <Button
-        aria-label={`COUNT: ${count}`}
-        label={`COUNT: ${count}`}
-        onClick={() => {
-          setCount(prevState => prevState + 1)
-        }}
-      />
+      <h1 className="text-center text-32 font-500">Vite + React</h1>
+      <CounterButton />
     </main>
   )
 }

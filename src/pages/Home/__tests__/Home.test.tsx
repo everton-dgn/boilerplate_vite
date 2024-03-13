@@ -1,6 +1,7 @@
 import { act, screen } from '@testing-library/react'
-import renderWithProviders from 'testHelpers/providers/components'
-import event from 'testHelpers/utilityFunctions'
+import { renderWithProviders } from 'tests/providers'
+import { event } from 'tests/helpFunctions'
+
 import Home from '..'
 
 describe('[Page] Home', () => {

@@ -1,0 +1,18 @@
+@layer components {
+  .skeleton {
+    animation: animation-color 5s ease-in-out infinite;
+
+    @keyframes animation-color {
+      0%,
+      50%,
+      100% {
+        @apply bg-neutral-light-lavender;
+      }
+
+      25%,
+      75% {
+        @apply bg-light-blue-hint;
+      }
+    }
+  }
+}

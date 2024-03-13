@@ -18,36 +18,6 @@
       }
     }
   },
-  "plugins": [
-    "react",
-    "react-hooks",
-    "@typescript-eslint",
-    "sonarjs",
-    "promise",
-    "prettier",
-    "testing-library",
-    "jest-dom",
-    "jest",
-    "jsx-a11y"
-  ],
-  "extends": [
-    "standard-with-typescript",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:promise/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:import/errors",
-    "plugin:import/typescript",
-    "plugin:sonarjs/recommended",
-    "prettier",
-    "plugin:prettier/recommended",
-    "plugin:storybook/recommended",
-    "plugin:jest-dom/recommended",
-    "plugin:testing-library/react",
-    "plugin:jest/style"
-  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -56,18 +26,71 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "sonarjs",
+    "promise",
+    "prettier",
+    "jsx-a11y",
+    "import",
+    "eslint-plugin-import-helpers",
+    "tailwindcss"
+  ],
+  "extends": [
+    "standard-with-typescript",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:promise/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "plugin:import/warnings",
+    "plugin:sonarjs/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
   "rules": {
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          ["/^react$/", "/next/"],
+          "module",
+          "/^(providers|components)/",
+          "/constants/",
+          ["/hooks/", "/helperFunctions/", "/testHelpers/"],
+          ["/infra/", "/data/", "/validation/"],
+          "/^assets/",
+          ["/^theme$/", "/styles/", "/@types/"],
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ],
+    "tailwindcss/no-custom-classname": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "@typescript-eslint/no-confusing-void-expression": "off",
+    "@typescript-eslint/unbound-method": "off",
+    "import/no-unresolved": [2, { "commonjs": true, "amd": true }],
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
+    "import/no-duplicates": "error",
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
-    "@typescript-eslint/no-floating-promises": [
-      "error",
-      {
-        "ignoreVoid": false
-      }
-    ],
-    "react/jsx-sort-props": "warn",
     "object-shorthand": "warn",
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/ban-ts-comment": "off",
@@ -98,21 +121,18 @@
   },
   "overrides": [
     {
-      "files": ["*.stories.@(tsx|js|jsx)"],
-      "rules": {
-        "storybook/hierarchy-separator": "error"
-      },
-      "extends": ["plugin:storybook/recommended"]
-    },
-    {
-      "files": ["**/__tests__/?(*.)+(spec|test).tsx?"],
+      "files": ["src/**/__tests__/*.test.{ts,tsx}"],
       "plugins": ["jest-dom", "testing-library", "jest"],
       "extends": [
         "plugin:jest-dom/recommended",
         "plugin:testing-library/react",
-        "plugin:jest/recommended",
         "plugin:jest/style"
-      ]
+      ],
+      "rules": {
+        "jest/no-disabled-tests": "off",
+        "testing-library/render-result-naming-convention": "off",
+        "jest/no-commented-out-tests": "off"
+      }
     }
   ]
 }

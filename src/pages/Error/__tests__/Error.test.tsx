@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react'
-import renderWithProviders from 'testHelpers/providers/components'
+import { renderWithProviders } from 'tests/providers'
+
 import Error from '..'
 
 describe('[Page] Error', () => {

@@ -1,15 +1,10 @@
 import { Outlet } from 'react-router-dom'
-import S from './styles.module.scss'
 
-const DefaultTemplate = () => (
-  <div className={S.grid}>
-    <header className={S.header} role="banner">
+export const DefaultTemplate = () => (
+  <div className="h-full grow p-16 center col-full">
+    <header className="mb-32 text-center text-32 font-600" role="banner">
       Boilerplate
     </header>
-    <div className={S.container}>
-      <Outlet />
-    </div>
+    <Outlet />
   </div>
 )
-
-export default DefaultTemplate

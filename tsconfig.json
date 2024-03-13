@@ -32,6 +32,11 @@
     "incremental": true,
     "types": ["vite/client", "vitest/globals"]
   },
-  "include": ["src", "./vitest.setup.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/@types/**/*.d.ts",
+    "./vitest.setup.ts"
+  ],
   "exclude": ["dist", "node_modules"]
 }
