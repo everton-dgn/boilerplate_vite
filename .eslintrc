@@ -39,7 +39,7 @@
     "tailwindcss"
   ],
   "extends": [
-    "standard-with-typescript",
+    "love",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
@@ -48,7 +48,7 @@
     "plugin:import/errors",
     "plugin:import/typescript",
     "plugin:import/warnings",
-    "plugin:sonarjs/recommended",
+    "plugin:sonarjs/recommended-legacy",
     "prettier",
     "plugin:prettier/recommended",
     "plugin:tailwindcss/recommended"
@@ -72,6 +72,7 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
+    "@typescript-eslint/non-nullable-type-assertion-style": "off",
     "tailwindcss/no-custom-classname": "off",
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/no-misused-promises": "off",
